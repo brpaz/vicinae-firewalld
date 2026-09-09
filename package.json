@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+  "name": "firewalld",
+  "title": "Firewalld",
+  "description": "View firewalld active zone, open ports, services and rich rules",
+  "icon": "icon.png",
+  "author": "brpaz",
+  "license": "MIT",
+  "commands": [
+    {
+      "icon": "icon.png",
+      "name": "list",
+      "subtitle": "Firewalld",
+      "title": "Firewall Zones",
+      "description": "The main command of the extension",
+      "mode": "view"
+    },
+    {
+      "icon": "icon.png",
+      "name": "logs",
+      "subtitle": "Firewalld",
+      "title": "Firewall Traffic Log",
+      "description": "View traffic recently dropped or rejected by firewalld",
+      "mode": "view"
+    },
+    {
+      "icon": "icon.png",
+      "name": "all-zones",
+      "subtitle": "Firewalld",
+      "title": "All Firewall Zones",
+      "description": "Browse every configured zone, not just the active ones",
+      "mode": "view"
+    },
+    {
+      "icon": "icon.png",
+      "name": "panic-toggle",
+      "subtitle": "Firewalld",
+      "title": "Toggle Panic Mode",
+      "description": "Instantly block or unblock all network traffic",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [],
+  "categories": [
+    "System"
+  ],
+  "dependencies": {
+    "@vicinae/api": "^0.28.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.12",
+    "@types/react": "19.2.18",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "build": "vici build",
+    "dev": "vici develop",
+    "lint": "biome check src/ && vici lint",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "typecheck": "tsc --noEmit",
+    "check": "biome check --write ."
+  }
+}
